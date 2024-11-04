@@ -300,17 +300,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const skipVideoButton = document.getElementById('skip-button');
         const videoWrapper = document.getElementById('video-wrapper');
 
-        const checkResolution = () => {
-
-            if (window.innerWidth <= 1024) {
-
-                movingBlock.style.transform = 'translate(-50%, -50%)';
-
-            };
-
-        };
-
-
         const rotatingPlayButton = (event) => {
             const mouseX = event.clientX;
             const mouseY = event.clientY;
@@ -341,7 +330,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         };
 
-
         const movingBlockClickEvent = () => { 
 
             video.play();
@@ -369,13 +357,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         };
 
-        checkResolution();
         
         skipVideoButton.addEventListener('click', videoEndedEvent);
         movingBlock.addEventListener('click', movingBlockClickEvent);
         video.addEventListener('timeupdate', videoTimeUpdateEvent);
         video.addEventListener('ended', videoEndedEvent);
-        document.addEventListener('mousemove', rotatingPlayButton);
+
+        if (window.innerWidth <= 1024) {
+
+            movingBlock.style.transform = 'translate(-50%, -50%)';
+
+        } else {
+
+            document.addEventListener('mousemove', rotatingPlayButton);
+
+        };
 
     };
 
