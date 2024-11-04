@@ -232,6 +232,7 @@ button{
     height: 64px;
 
     position: absolute;
+    z-index: 20;
     pointer-events: all;
     bottom: 30px;
     left: 50%;

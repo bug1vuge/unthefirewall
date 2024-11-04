@@ -346,8 +346,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const videoTimeUpdateEvent = () => { requestAnimationFrame(updateVideoProgress) };
 
-        const videoEndedEvent = () => {
+        const videoEndedEvent = (e) => {
 
+            e.preventDefault();
+            e.stopPropagation();
+            
             progressBar.style.width = '0%';
             video.pause();
             videoWrapper.style.display = 'none';
@@ -375,8 +378,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     };
 
+    const showNextScreen = () => {
+
+        const slideButton = document.querySelector('.hero__slide-button');
+
+        slideButton.addEventListener('click', (e) => {
+
+            console.log('e');
+            
+
+        });
+
+    };
     
 
     heroVideoModule();
     videoAnimationModule();
+    showNextScreen();
+
 });
