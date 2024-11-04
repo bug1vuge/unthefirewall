@@ -304,13 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (window.innerWidth <= 1024) {
 
-                movingBlock.style.display = 'none';
-
-                video.addEventListener('click', () => {
-
-                    video.play();
-
-                });
+                movingBlock.style.transform = 'translate(-50%, -50%)';
 
             };
 
