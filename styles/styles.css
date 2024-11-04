@@ -567,11 +567,6 @@ main.-js-visible{
 
 
 .crackedwall{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-
-
     height: 130vh;
     z-index: 21;
     top: 0;
