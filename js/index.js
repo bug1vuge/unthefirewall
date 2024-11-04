@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const wallImages = [];
         
         for (let i = 14; i <= 83; i++) {
-            wallImages.push(`../assets/images/cracked-wall/Crack_alpha_${String(i).padStart(5, '0')}.png`);
+            wallImages.push(`./assets/images/cracked-wall/Crack_alpha_${String(i).padStart(5, '0')}.png`);
         }
 
         const totalImagesCount = wallImages.length;
