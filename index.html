@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+
+    <div id="video-wrapper" class="video">
+
+        <video id="player" class="video__player" src="./assets/videos/main.mp4" type="video/mp4"></video>
+
+        <div id="video-play" class="video__play">
+            <span class="video__play-text">PLAY VIDEO</span>
+            <span class="video__play-icon">
+                <svg width="11" height="14" viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.5 6.13396C11.1667 6.51886 11.1667 7.48111 10.5 7.86601L1.5 13.0622C0.833333 13.4471 0 12.9659 0 12.1961V1.80383C0 1.03403 0.833333 0.552903 1.5 0.937803L10.5 6.13396Z" fill="#252423"></path>
+                </svg>
+            </span>
+        </div>
+
+        <div class="video__skip">
+            <button id="skip-button" class="video__skip-button" type="button">skip intro</button>
+        </div>
+
+        <div class="video__progress">
+            <div id="progress-bar" class="video__progress-bar"></div>
+        </div>
+
+    </div>
+
+    <main id="main" class="main">
+
+        <div class="section section--1 hero">
+            <div class="hero__inner">
+                <div class="hero__bg-images">
+                    <img class="texture1" src="./assets/images/background_texture1.png">
+                    <img class="texture2" src="./assets/images/background_texture2.png">
+                </div>
+                <video class="section__video" src="./assets/videos/foreground.webm" type="video/webm" autoplay muted loop></video>
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        <div class="hero__title-upper">undo the</div>
+                        <div class="hero__title-lower">firewall</div>
+                    </h1>
+                    <h6 class="hero__subtitle">bring independent news to russians</h6>
+                </div>
+                <button class="hero__slide-button" type="button">
+                    <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                        <circle cx="32" cy="32" r="31.5" stroke="url(#paint0_linear_2777_430)" data-svg-origin="32 32"></circle>
+                        <path d="M31.9967 40.5335L38.5487 33.9717L38.1392 33.4714L32.3763 39.3565V23.4668H31.6833L31.6833 39.3383L26.0111 33.4714L25.6016 33.9716L31.9967 40.5335Z" fill="#C9C5B8"></path>
+                        <defs>
+                            <linearGradient id="paint0_linear_2777_430" x1="32" y1="0" x2="49.6757" y2="58.6753" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FFFBE9"></stop>
+                                <stop offset="1" stop-color="#FFFBE9" stop-opacity="0"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </button>
+
+            </div>
+        </div>
+
+        <div class="section section--2 headlines">
+            <div class="headlines__inner">
+
+                <video class="section__video" src="./assets/videos/foreground.webm" type="video/webm" autoplay muted loop></video>
+
+                <div class="headlines__blocks">
+
+                    <div class="headlines__block headlines__block--1 headline">
+                        <p class="headline__date">Октябрь 2024</p>
+                        <h3 class="headline__title">
+                            FT reports 'exploratory talks' between Russia and Ukraine to stop attacks on energy facilities
+                        </h3>
+                        <p class="headline__label">Mediazona</p>
+                    </div>
+
+                    <div class="headlines__block headlines__block--2 headline">
+                        <h3 class="headline__title">
+                            House in Cherkessk to be checked for habitability after explosion
+                        </h3>
+                        <p class="headline__label">Говорит НеМосква</p>
+                    </div>
+
+                    <div class="headlines__block headlines__block--3 headline">
+                        <p class="headline__date">Ноябрь 2024</p>
+                        <h3 class="headline__title">
+                            A court in Vladivostok sentenced former US Consulate General employee Robert Shonov to four years and ten months in prison
+                        </h3>
+                        <p class="headline__label">ЭХО</p>
+                    </div>
+
+                    <div class="headlines__block headlines__block--4 headline">
+                        <p class="headline__date">Октябрь 2024</p>
+                        <h3 class="headline__title">
+                            Росгвардия: в пытавшейся пересечь границу ДРГ в Брянской области было 10 человек
+                        </h3>
+                    </div>
+
+                    <div class="headlines__block headlines__block--5 headline">
+                        <p class="headline__date">Октябрь 2024</p>
+                        <h3 class="headline__title">
+                            Росгвардия: в пытавшейся пересечь границу ДРГ в Брянской области было 10 человек
+                        </h3>
+                    </div>
+
+                    <div class="headlines__block headlines__block--6 headline">
+                        <p class="headline__date">Ноябрь 2024</p>
+                        <h3 class="headline__title">
+                            Spain flood death toll rises to 205
+                        </h3>
+                    </div>
+
+                    <div class="headlines__block headlines__block--7 headline">
+                        <h3 class="headline__title">
+                            The Ministry of Justice has added to the register of foreign agents
+                        </h3>
+                    </div>
+
+                    <div class="headlines__block headlines__block--8 headline">
+                        <p class="headline__date">Октябрь 2024</p>
+                        <h3 class="headline__title">
+                            One person died after a truck collided with a crowd of people in a Tel Aviv area of Israel
+                        </h3>
+                        <p class="headline__label">Настоящее время</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="section section--3 section--overlay-anim" >
+            <div class="section__inner">
+                <video class="section__video" src="./assets/videos/foreground.webm" type="video/webm" autoplay muted loop></video>
+                <h2 class="section__title">
+                    <div>
+                        In Russia news are being <span>censored</span>,
+                    </div>
+                    <div>
+                        making it nearly impossible to <span>access</span> 
+                    </div>
+                    <div>
+                        <span>independent news.</span> 
+                    </div>
+                </h2>
+            </div>
+        </div>
+        <div class="section section--4 section--overlay-anim">
+            <div class="section__inner">
+                <video class="section__video" src="./assets/videos/foreground.webm" type="video/webm" autoplay muted loop></video>
+                <h2 class="section__title">
+                    <div>
+                        Undo the Firewall provides an ease way
+                    </div>
+                    <div>
+                        for <span>any website to host real, </span>
+                    </div>
+                    <div>
+                        <span>uncensored, news</span> and help spread them 
+                    </div>
+                    <div>
+                        to the Russian people...
+                    </div>
+                </h2>
+            </div>
+        </div>
+        <div class="section section--5 section--overlay-anim">
+            <div class="section__inner">
+                <video class="section__video" src="./assets/videos/foreground.webm" type="video/webm" autoplay muted loop></video>
+                <h2 class="section__title--reversed">
+                    <div>
+                        ...in a way that <span>can't be blocked</span> in a
+                    </div> 
+                    <div>center manner</div>
+                </h2>
+            </div>
+        </div>
+        <div class="section crackedwall section--overlay-anim">
+            <div class="crackedwall-background" id="background1"></div>
+            <div class="crackedwall-background" id="background2"></div>
+            <div class="section__inner">
+                <video class="section__video" src="./assets/videos/foreground.webm" type="video/webm" autoplay muted loop></video>
+                <h2 class="crackedwall__title">
+                    With your help, we can </br> break through the </br> firewall
+                </h2>
+            </div>
+        </div>
+        <div class="section result section--overlay-anim">
+            
+            <div class="section__inner">
+                <video class="section__video" src="./assets/videos/foreground.webm" type="video/webm" autoplay muted loop></video>
+                <h2 class="result__title">
+                    this is how it works 
+                </h2>
+            </div>
+        </div>
+
+    </main>
+
+    
+
+    <script src="./libs/gsap/gsap-public/minified/gsap.min.js"></script>
+    <script src="./libs/gsap/gsap-public/minified/CSSRulePlugin.min.js"></script>
+    <script src="./libs/gsap/gsap-public/minified/CustomEase.min.js"></script>
+    <script src="./libs/gsap/gsap-public/minified/Draggable.min.js"></script>
+    <script src="./libs/gsap/gsap-public/minified/EaselPlugin.min.js"></script>
+    <script src="./libs/gsap/gsap-public/minified/EasePack.min.js"></script>
+    <script src="./libs/gsap/gsap-public/minified/Flip.min.js"></script>
+    <script src="./libs/gsap/gsap-public/minified/MotionPathPlugin.min.js"></script>
+    <script src="./libs/gsap/gsap-public/minified/Observer.min.js"></script>
+    <script src="./libs/gsap/gsap-public/minified/PixiPlugin.min.js"></script>
+    <script src="./libs/gsap/gsap-public/minified/ScrollToPlugin.min.js"></script>
+    <script src="./libs/gsap/gsap-public/minified/ScrollTrigger.min.js"></script>
+    <script src="./libs/gsap/gsap-public/minified/TextPlugin.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
