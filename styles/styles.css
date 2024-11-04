@@ -792,6 +792,10 @@ main.-js-visible{
         right: 10%;
         top: 62%;
     }
+
+    .crackedwall{
+        height: 100vh;
+    }
 }
 
 @media(max-width: 768px) {
