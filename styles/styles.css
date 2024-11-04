@@ -474,18 +474,6 @@ button{
     max-width: 300px;
 }
 
-/* .headlines__block--7{
-    top: 35%;
-    right: 15%;
-    max-width: 350px;
-}
-
-.headlines__block--8{
-    right: 20%;
-    bottom: 30%;
-    max-width: 310px;
-} */
-
 
 .headline__date{
     font-family: "Work Sans", sans-serif;
@@ -520,8 +508,6 @@ button{
 
     text-transform: uppercase;
 }
-
-
 
 main{
     display: none;
