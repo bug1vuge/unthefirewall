@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     duration: 2.2, 
                     scrollTrigger: {
                         trigger: ".section--1",
-                        start: "bottom bottom",
+                        start: "bottom+=20vh bottom",
                         toggleActions: "play reverse play reverse",
                         scrub: true,
                     },
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 duration: 2.2,
                 scrollTrigger: {
                     trigger: ".divider",
-                    start: "40% 15%",
+                    start: "40% 20%",
                     toggleActions: "play reverse play reverse",
                     scrub: true
                 },
@@ -368,7 +368,8 @@ document.addEventListener('DOMContentLoaded', () => {
             document.addEventListener('mousemove', rotatingPlayButton);
         } else {
             movingBlock.style.transform = 'translate(-50%, -50%)';
-        }
+            movingBlock.classList.remove('-js-hidden');
+        };
     };
     
     const showNextScreen = () => {
