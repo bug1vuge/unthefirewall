@@ -1,22 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const videoAnimationModule = () => {
-
-        gsap.to('.video__player', {
-            duration: 0.6,
-            delay: 0.6,
-            opacity: 1 
-        });
-
-        gsap.to('.video__skip', {
-            bottom: '40px',
-            delay: 1,
-            duration: 1, 
-            ease: 'power2.out' 
-        });
-
-    };
-
     const contentAnimationModule = () => {
 
         const heroUpperTitle = document.querySelector('.hero__title-upper');
@@ -74,8 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             );
         });
-
-        
 
         gsap.utils.toArray(".section__title").forEach((title, index) => {
 
@@ -251,9 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
             }
         );
-        
-
-
+    
         gsap.fromTo('.crackedwall__title', 
             { 
                 y: '-2vh',
@@ -292,7 +271,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const heroVideoModule = () => {
-        
         const movingBlock = document.getElementById('video-play');
         const video = document.getElementById('player');
         const progressBar = document.getElementById('progress-bar');
@@ -300,100 +278,120 @@ document.addEventListener('DOMContentLoaded', () => {
         const skipVideoButton = document.getElementById('skip-button');
         const videoWrapper = document.getElementById('video-wrapper');
 
+        const initAnimation = () => {
+
+            gsap.to('.video__player', {
+                duration: 0.6,
+                delay: 0.6,
+                opacity: 1 
+            });
+    
+            gsap.to('.video__skip', {
+                bottom: '40px',
+                delay: 1,
+                duration: 1, 
+                ease: 'power2.out' 
+            });
+
+        };
+    
         const rotatingPlayButton = (event) => {
             const mouseX = event.clientX;
             const mouseY = event.clientY;
-
+    
             const movingBlockWidth = movingBlock.offsetWidth / 2;
             const movingBlockHeight = movingBlock.offsetHeight / 2;
-        
+            
             movingBlock.style.transform = `translate(${mouseX - movingBlockWidth}px, ${mouseY - movingBlockHeight}px)`;
-        
+            
             const movingRect = movingBlock.getBoundingClientRect();
             const targetRect = skipVideoButton.getBoundingClientRect();
-        
+    
             const isIntersecting = !(
                 movingRect.right < targetRect.left ||
                 movingRect.left > targetRect.right ||
                 movingRect.bottom < targetRect.top ||
                 movingRect.top > targetRect.bottom
             );
-        
-            movingBlock.style.opacity = isIntersecting ? '0' : '1';
+    
+            if (video.paused) {
+                movingBlock.style.opacity = isIntersecting ? '0' : '1';
+                if (!isIntersecting) {
+                    movingBlock.classList.remove('-js-hidden');
+                }
+            } else {
+                hideMovingBlock();
+            }
         };
-
+    
         const hideMovingBlock = () => {
-
-            movingBlock.style.opacity = '0'; 
-
-            setTimeout(() => { movingBlock.classList.add('-js-hidden') }, 300); 
-
+            movingBlock.style.opacity = '0';
+            movingBlock.classList.add('-js-hidden');
         };
-
-        const movingBlockClickEvent = () => { 
-
+    
+        const movingBlockClickEvent = () => {
             video.play();
             hideMovingBlock();
-
         };
-
+    
         const updateVideoProgress = () => {
-
             const progress = (video.currentTime / video.duration) * 100;
             progressBar.style.width = `${progress}%`;
-
-        }
-
-        const videoTimeUpdateEvent = () => { requestAnimationFrame(updateVideoProgress) };
-
+        };
+    
+        const videoTimeUpdateEvent = () => {
+            requestAnimationFrame(updateVideoProgress);
+        };
+    
         const videoEndedEvent = (e) => {
-
             e.preventDefault();
             e.stopPropagation();
-            
+    
             progressBar.style.width = '0%';
             video.pause();
             videoWrapper.style.display = 'none';
             postVideoContent.classList.add('-js-visible');
-
+    
+            document.removeEventListener('mousemove', rotatingPlayButton);
+    
             contentAnimationModule();
-
         };
 
-        
+        initAnimation();
+    
         skipVideoButton.addEventListener('click', videoEndedEvent);
         movingBlock.addEventListener('click', movingBlockClickEvent);
         video.addEventListener('timeupdate', videoTimeUpdateEvent);
         video.addEventListener('ended', videoEndedEvent);
-
-        if (window.innerWidth <= 1024) {
-
-            movingBlock.style.transform = 'translate(-50%, -50%)';
-
-        } else {
-
+    
+        if (window.innerWidth > 1024) {
             document.addEventListener('mousemove', rotatingPlayButton);
-
-        };
-
+        } else {
+            movingBlock.style.transform = 'translate(-50%, -50%)';
+        }
     };
-
+    
     const showNextScreen = () => {
 
         const slideButton = document.querySelector('.hero__slide-button');
+        let scrollToValue = window.innerHeight;
 
-        slideButton.addEventListener('click', (e) => {
+        const slideButtonEvent = () => {
 
-            console.log('e');
-            
+            window.scrollTo({
+                top: scrollToValue,
+                behavior: 'smooth'
+            });
 
-        });
+            scrollToValue += window.innerHeight;
 
+        };
+    
+        slideButton.addEventListener('click', slideButtonEvent);
+    
     };
     
-
     heroVideoModule();
-    videoAnimationModule();
     showNextScreen();
 
 });
