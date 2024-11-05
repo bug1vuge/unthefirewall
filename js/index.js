@@ -151,6 +151,59 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         );
 
+        gsap.fromTo('.crackedwall__title', 
+            { 
+                y: '0',
+                opacity: 1
+            }, 
+            {
+                y: '-100vh',
+                opacity: 0,
+                duration: 0.4,
+                scrollTrigger: {
+                    trigger: ".crackedwall",
+                    start: "center center",
+                    end: 'bottom bottom',
+                    toggleActions: "play reverse play reverse",
+                    scrub: true
+                },
+            }
+        );
+
+        gsap.fromTo('.section__title--reversed', 
+            { 
+                y: '0',
+                opacity: 1
+            }, 
+            {
+                y: '-100vh',
+                opacity: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".section--5",
+                    start: "bottom bottom",
+                    toggleActions: "play reverse play reverse",
+                    scrub: true
+                },
+            }
+        );
+
+        gsap.fromTo('.crackedwall__result', 
+            {
+                opacity: 0
+            }, 
+            {
+                opacity: 1,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: ".crackedwall",
+                    start: "top top",
+                    end: 'bottom bottom',
+                    toggleActions: "play reverse play reverse",
+                    scrub: true
+                },
+            }
+        );
 
 
         const wallImages = [];
@@ -171,10 +224,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: ".section--6",
-                start: "center+=100vh center",
-                end: "bottom bottom",
-                scrub: 0.1, 
+                trigger: ".section--5",
+                start: "bottom-=50vh bottom",
+                // end: "bottom bottom",
+                scrub: true, 
                 toggleActions: "play reverse play reverse",
             }
         });
@@ -197,77 +250,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        gsap.utils.toArray(".result__title").forEach((title) => {
-            gsap.fromTo(
-                title,
-                { y: '20vh'}, 
-                {
-                    y: '0',       
-                    delay: 1,
-                    duration: 3,
-                    ease: "power4.out",
-                    scrollTrigger: {
-                        trigger: title,
-                        start: "top 80%",
-                        scrub: true
-                    }
-                }
-            );
-        });
-
-        gsap.fromTo('.section__title--reversed', 
-            { 
-                y: '0',
-                opacity: 1
-            }, 
-            {
-                y: '-100vh',
-                opacity: 0,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: ".section--5",
-                    start: "bottom bottom",
-                    toggleActions: "play reverse play reverse",
-                    scrub: true
-                },
-            }
-        );
-    
-        gsap.fromTo('.crackedwall__title', 
-            { 
-                y: '-2vh',
-                opacity: 1
-            }, 
-            {
-                y: 0,
-                opacity: 0,
-                duration: 1,
-                delay: 1,
-                scrollTrigger: {
-                    trigger: ".crackedwall",
-                    start: "center center",
-                    end: 'bottom bottom',
-                    toggleActions: "play reverse play reverse",
-                    scrub: true
-                },
-            }
-        );
-
-        gsap.fromTo('.result', 
-            { 
-                top: '100vh',
-            }, 
-            {
-                top: 0,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: ".crackedwall",
-                    start: "center center",
-                    toggleActions: "play reverse play reverse",
-                    scrub: true
-                },
-            }
-        );
     };
 
     const heroVideoModule = () => {
