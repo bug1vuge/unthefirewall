@@ -10,7 +10,7 @@
 
     <div id="video-wrapper" class="video">
 
-        <video preload="none" id="player" class="video__player">
+        <video id="player" class="video__player">
             <source src="./assets/videos/main.mp4" type="video/mp4">
         </video>
 
@@ -35,16 +35,19 @@
 
     <main id="main" class="main">
 
+        <div class="foreground">
+            <video preload="none" class="foreground__player" autoplay muted loop>
+                <source src="./assets/videos/foreground.webm" type="video/webm">
+                <source src="./assets/videos/foreground-safari.mp4" type="video/mp4">
+            </video>
+        </div>
+
         <div class="section section--1 hero">
             <div class="hero__inner">
                 <div class="hero__bg-images">
                     <img class="texture1" src="./assets/images/background_texture1.png">
                     <img class="texture2" src="./assets/images/background_texture2.png">
                 </div>
-                <video preload="none" class="section__video" autoplay muted loop>
-                    <source src="./assets/videos/foreground.webm" type="video/webm">
-                    <source src="./assets/videos/foreground-safari.mp4" type="video/mp4">
-                </video>
                 <div class="hero__content">
                     <h1 class="hero__title">
                         <div class="hero__title-upper">undo the</div>
@@ -70,11 +73,6 @@
 
         <div class="section section--2 headlines">
             <div class="headlines__inner">
-
-                <video preload="none" class="section__video" autoplay muted loop>
-                    <source src="./assets/videos/foreground.webm" type="video/webm">
-                    <source src="./assets/videos/foreground-safari.mp4" type="video/mp4">
-                </video>
 
                 <div class="headlines__blocks">
 
@@ -131,10 +129,6 @@
 
         <div class="section section--3 section--overlay-anim" >
             <div class="section__inner">
-                <video preload="none" class="section__video" autoplay muted loop>
-                    <source src="./assets/videos/foreground.webm" type="video/webm">
-                    <source src="./assets/videos/foreground-safari.mp4" type="video/mp4">
-                </video>
                 <h2 class="section__title">
                     <div>
                         In Russia news are being <span>censored</span>,
@@ -150,10 +144,6 @@
         </div>
         <div class="section section--4 section--overlay-anim">
             <div class="section__inner">
-                <video preload="none" class="section__video" autoplay muted loop>
-                    <source src="./assets/videos/foreground.webm" type="video/webm">
-                    <source src="./assets/videos/foreground-safari.mp4" type="video/mp4">
-                </video>
                 <h2 class="section__title">
                     <div>
                         Undo the Firewall provides an ease way
@@ -172,11 +162,7 @@
         </div>
         <div class="section section--5 section--overlay-anim">
             <div class="section__inner">
-                <video preload="none" class="section__video" autoplay muted loop>
-                    <source src="./assets/videos/foreground.webm" type="video/webm">
-                    <source src="./assets/videos/foreground-safari.mp4" type="video/mp4">
-                </video>
-                <h2 class="section__title--reversed">
+                <h2 class="title-reversed">
                     <div>
                         ...in a way that <span>can't be blocked</span> in a
                     </div> 
@@ -184,25 +170,15 @@
                 </h2>
             </div>
         </div>
-        <div class="section crackedwall section--overlay-anim">
-            <div class="crackedwall-background" id="background1"></div>
-            <div class="crackedwall-background" id="background2"></div>
+
+        <div class="section crackedwall section--6">
+            <div class="crackedwall__overlay"></div>
             <div class="section__inner">
-                <video preload="none" class="section__video" autoplay muted loop>
-                    <source src="./assets/videos/foreground.webm" type="video/webm">
-                    <source src="./assets/videos/foreground-safari.mp4" type="video/mp4">
-                </video>
                 <h2 class="crackedwall__title">
-                    With your help, we can </br> break through the </br> firewall
+                    <span>With your help, we can </br> break through the </br> firewall</span>
                 </h2>
-
-                <div class="crackedwall__result">
-                    <h2 class="crackedwall__result-title">
-                        this is how it works 
-                    </h2>
-                </div>
-
             </div>
+            <h3 class="crackedwall__result">this is how it works </h3>
         </div>
 
     </main>

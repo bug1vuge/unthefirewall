@@ -13,74 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to('.hero__slide-button', {
-            duration: 1.2,
-            delay: 1.5,
-            opacity: 1,
-            scale: 1
-        });
-
-        gsap.to(heroUpperTitle, {
-            height: heroUpperTitleHeight, 
-            duration: 0.6,
-            delay: 1,
-            ease: "power1.out"
-        });
-
-        gsap.to(heroLowerTitle, {
-            height: heroLowerTitleHeight, 
-            duration: 0.6,
-            delay: 1,
-            ease: "power1.out"
-        });
-
-        gsap.to('.hero__subtitle', {
-            duration: 0.6,
-            delay: 1,
-            opacity: 1,
-        });
-
-        gsap.utils.toArray(".section__title").forEach((title) => {
-            gsap.fromTo(
-                title,
-                { y: '10vh'}, 
-                {
-                    y: '-10vh',       
-                    delay: 1,
-                    duration: 2,
-                    ease: "power4.out",
-                    scrollTrigger: {
-                        trigger: title,
-                        start: "top 80%",
-                        scrub: true
-                    }
-                }
-            );
-        });
-
-        gsap.utils.toArray(".section__title").forEach((title, index) => {
-
-            const lines = title.querySelectorAll("div");
-        
-            gsap.fromTo(
-                lines,
-                { opacity: 0 },
-                {
-                    opacity: 1,
-                    duration: 1,
-                    ease: "power2.out",
-                    delay: 0.2,
-                    stagger: 0.1,
-                    scrollTrigger: {
-                        trigger: title,
-                        start: "top 70%",
-                        toggleActions: "play none none reverse",
-                        scrub: true 
-                    }
-                }
-            );
-        });
-
         gsap.to(".texture1", {
             scrollTrigger: {
                 trigger: ".section--2",
@@ -115,23 +47,31 @@ document.addEventListener('DOMContentLoaded', () => {
             duration: 2
         });
 
-        gsap.utils.toArray(".headline").forEach((block, index) => {
-            gsap.fromTo(block, 
-                { 
-                    opacity: 0, 
-                }, 
-                { 
-                    opacity: 1, 
-                    duration: 2.2, 
-                    scrollTrigger: {
-                        trigger: ".section--1",
-                        start: "bottom+=20vh bottom",
-                        toggleActions: "play reverse play reverse",
-                        scrub: true,
-                    },
-                    ease: "power2.out"
-                }
-            );
+        gsap.to('.hero__slide-button', {
+            duration: 1.2,
+            delay: 1.5,
+            opacity: 1,
+            scale: 1
+        });
+
+        gsap.to(heroUpperTitle, {
+            height: heroUpperTitleHeight, 
+            duration: 0.6,
+            delay: 1,
+            ease: "power1.out"
+        });
+
+        gsap.to(heroLowerTitle, {
+            height: heroLowerTitleHeight, 
+            duration: 0.6,
+            delay: 1,
+            ease: "power1.out"
+        });
+
+        gsap.to('.hero__subtitle', {
+            duration: 0.6,
+            delay: 1,
+            opacity: 1,
         });
 
         gsap.fromTo('.headlines', 
@@ -151,104 +91,197 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         );
 
-        gsap.fromTo('.crackedwall__title', 
-            { 
-                y: '0',
-                opacity: 1
-            }, 
-            {
-                y: '-100vh',
-                opacity: 0,
-                duration: 0.4,
-                scrollTrigger: {
-                    trigger: ".crackedwall",
-                    start: "center center",
-                    end: 'bottom bottom',
-                    toggleActions: "play reverse play reverse",
-                    scrub: true
-                },
-            }
-        );
+        gsap.utils.toArray(".headline").forEach((block, index) => {
+            gsap.fromTo(block, 
+                { 
+                    opacity: 0, 
+                }, 
+                { 
+                    opacity: 1, 
+                    duration: 2.2, 
+                    scrollTrigger: {
+                        trigger: ".section--1",
+                        start: "bottom+=20vh bottom",
+                        toggleActions: "play reverse play reverse",
+                        scrub: true,
+                    },
+                    ease: "power2.out"
+                }
+            );
+        });
 
-        gsap.fromTo('.section__title--reversed', 
+        gsap.utils.toArray(".section__title").forEach((title) => {
+            gsap.fromTo(
+                title,
+                { y: '10vh'}, 
+                {
+                    y: '-10vh',       
+                    delay: 1,
+                    duration: 2,
+                    ease: "power4.out",
+                    scrollTrigger: {
+                        trigger: title,
+                        start: "top 80%",
+                        scrub: true
+                    }
+                }
+            );
+        });
+
+        gsap.utils.toArray(".section__title").forEach((title, index) => {
+
+            const lines = title.querySelectorAll("div");
+        
+            gsap.fromTo(
+                lines,
+                { opacity: 0 },
+                {
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: title,
+                        start: "top 100%",
+                        toggleActions: "play none none reverse",
+                        scrub: true 
+                    }
+                }
+            );
+        });
+
+        gsap.fromTo('.title-reversed',
             { 
-                y: '0',
-                opacity: 1
+                y: '-10vh'
             }, 
             {
-                y: '-100vh',
-                opacity: 0,
-                duration: 1,
+                y: '-80vh',       
+                duration: 4,
+                ease: "power4.out",
                 scrollTrigger: {
-                    trigger: ".section--5",
+                    trigger: '.section--5',
                     start: "bottom bottom",
-                    toggleActions: "play reverse play reverse",
                     scrub: true
-                },
+                }
             }
         );
 
-        gsap.fromTo('.crackedwall__result', 
+        gsap.fromTo('.crackedwall__title',
+            { 
+                opacity: 1,
+            }, 
             {
-                opacity: 0
+                opacity: 0,
+                duration: 0.8,  
+                delay: 15,   
+                scrollTrigger: {
+                    trigger: '.crackedwall',
+                    start: "top top",
+                    end: 'center center',
+                    toggleActions: "play none none reverse",
+                    scrub: true
+                }
+            }
+        );
+
+        gsap.fromTo('.crackedwall__result',
+            { 
+                opacity: 0,
             }, 
             {
                 opacity: 1,
-                duration: 1,
+                duration: 0.8,  
+                delay: 15,   
                 scrollTrigger: {
-                    trigger: ".crackedwall",
-                    start: "top top",
+                    trigger: '.crackedwall',
+                    start: "center center",
                     end: 'bottom bottom',
-                    toggleActions: "play reverse play reverse",
+                    toggleActions: "play none none reverse",
                     scrub: true
-                },
+                }
             }
         );
 
 
-        const wallImages = [];
-        
-        for (let i = 14; i <= 83; i++) {
-            wallImages.push(`./assets/images/cracked-wall/Crack_alpha_${String(i).padStart(5, '0')}.png`);
+
+        // const crackedWallContainer = document.querySelector('.crackedwall__overlay');
+
+        // const frameWidth = 1920; 
+        // const frameHeight = 1080; 
+        // const totalFrames = 70; 
+        // const framesPerRow = 10; 
+
+        // gsap.to({ currentFrame: 0 }, {
+        //     currentFrame: totalFrames - 1,
+        //     duration: 5,
+        //     ease: 'none',
+        //     roundProps: "currentFrame",
+        //     onUpdate: function () {
+
+        //         const frameIndex = Math.floor(this.targets()[0].currentFrame); 
+
+        //         if (frameIndex < 0 || frameIndex >= totalFrames) return;
+
+        //         const row = Math.floor(frameIndex / framesPerRow); 
+        //         const col = frameIndex % framesPerRow; 
+
+        //         const posX = -(col * frameWidth); 
+        //         const posY = -(row * frameHeight);
+
+        //         crackedWallContainer.style.backgroundPosition = `${posX}px ${posY}px`;
+        //     },
+        //     scrollTrigger: {
+        //         trigger: '.crackedwall',
+        //         start: 'top top',
+        //         // end: 'bottom bottom',
+        //         scrub: true,
+        //         pin: true,
+        //     }
+        // });
+
+        const crackedWallContainer = document.querySelector('.crackedwall__overlay');
+
+        const totalFrames = 70; 
+        const framesPerRow = 10; 
+        const frameWidth = 1920;
+        const frameHeight = 1080;
+
+        // Масштабируем контейнер в зависимости от ширины окна
+        function updateScale() {
+            const scale = window.innerWidth / frameWidth;
+            crackedWallContainer.style.transform = `translateX(-50%) scale(${scale})`;
         }
 
-        const totalImagesCount = wallImages.length;
-        let previousIndex = -1;
-        let currentBackground = document.getElementById("background1");
-        let nextBackground = document.getElementById("background2");
+        // Анимация с GSAP
+        gsap.to({ currentFrame: 0 }, {
+            currentFrame: totalFrames - 1,
+            duration: 10,
+            // delay: 6,
+            ease: 'none',
+            roundProps: "currentFrame",
+            onUpdate: function () {
+                const frameIndex = Math.floor(this.targets()[0].currentFrame); 
 
-        wallImages.forEach(src => {
-            const img = new Image();
-            img.src = src;
-        });
+                if (frameIndex < 0 || frameIndex >= totalFrames) return;
 
-        const tl = gsap.timeline({
+                const row = Math.floor(frameIndex / framesPerRow); 
+                const col = frameIndex % framesPerRow; 
+
+                const posX = -(col * frameWidth); 
+                const posY = -(row * frameHeight);
+
+                crackedWallContainer.style.backgroundPosition = `${posX}px ${posY}px`;
+            },
             scrollTrigger: {
-                trigger: ".section--5",
-                start: "bottom-=50vh bottom",
-                // end: "bottom bottom",
-                scrub: true, 
-                toggleActions: "play reverse play reverse",
+                trigger: '.section--6',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: true,
+                pin: true,
             }
         });
 
-        tl.to({}, {
-            onUpdate: function() {
-                const progress = this.progress();
-                const index = Math.min(Math.floor(progress * totalImagesCount), totalImagesCount - 1);
-
-                if (index !== previousIndex) {
-                    previousIndex = index;
-
-                    nextBackground.style.backgroundImage = `url(${wallImages[index]})`;
-                    nextBackground.style.opacity = 1;
-
-                    currentBackground.style.opacity = 1;
-
-                    [currentBackground, nextBackground] = [nextBackground, currentBackground];
-                }
-            }
-        });
+        window.addEventListener('resize', updateScale);
+        updateScale(); // Первоначальный вызов для установки масштаба
 
     };
 
