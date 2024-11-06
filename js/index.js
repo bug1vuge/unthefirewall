@@ -198,23 +198,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         );
 
-        gsap.fromTo('.crackedwall__result',
-            { 
-                opacity: 0,
-            }, 
-            {
-                opacity: 1,
-                duration: 0.8,  
-                delay: 15,   
-                scrollTrigger: {
-                    trigger: '.crackedwall',
-                    start: "center center",
-                    end: 'bottom bottom',
-                    toggleActions: "play none none reverse",
-                    scrub: true
-                }
-            }
-        );
+        // gsap.fromTo('.crackedwall__result',
+        //     { 
+        //         opacity: 0,
+        //     }, 
+        //     {
+        //         opacity: 1,
+        //         duration: 0.8,  
+        //         delay: 15,   
+        //         scrollTrigger: {
+        //             trigger: '.crackedwall',
+        //             start: "center center",
+        //             end: 'bottom bottom',
+        //             toggleActions: "play none none reverse",
+        //             scrub: true
+        //         }
+        //     }
+        // );
 
 
 
@@ -253,35 +253,144 @@ document.addEventListener('DOMContentLoaded', () => {
         //     }
         // });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // const crackedWallContainer = document.querySelector('.crackedwall__overlay');
+
+        // const totalFrames = 70; 
+        // const framesPerRow = 10; 
+        // const frameWidth = 1920;
+        // const frameHeight = 1080;
+
+        // function updateScale() {
+        //     const scale = window.innerWidth / frameWidth;
+        //     crackedWallContainer.style.transform = `translateX(-50%) scale(${scale})`;
+        // };
+
+        // gsap.to({ currentFrame: 0 }, {
+        //     currentFrame: totalFrames - 1,
+        //     duration: 10,
+        //     // delay: 6,
+        //     ease: 'none',
+        //     roundProps: "currentFrame",
+        //     onUpdate: function () {
+        //         const frameIndex = Math.floor(this.targets()[0].currentFrame); 
+
+        //         if (frameIndex < 0 || frameIndex >= totalFrames) return;
+
+        //         const row = Math.floor(frameIndex / framesPerRow); 
+        //         const col = frameIndex % framesPerRow; 
+
+        //         const posX = -(col * frameWidth); 
+        //         const posY = -(row * frameHeight);
+
+        //         crackedWallContainer.style.backgroundPosition = `${posX}px ${posY}px`;
+        //     },
+        //     scrollTrigger: {
+        //         trigger: '.section--6',
+        //         start: 'top top',
+        //         end: 'bottom bottom',
+        //         scrub: true,
+        //         pin: true,
+        //     }
+        // });
+
+        // window.addEventListener('resize', updateScale);
+        // updateScale();
+
+
+        //
+
+        // const crackedWallContainer = document.querySelector('.crackedwall__overlay');
+
+        // const totalFrames = 70;
+        // const framesPerRow = 10;
+        // const frameWidth = 1920;
+        // const frameHeight = 1080;
+
+        // function updateScale() {
+        //     // Вычисляем нужный масштаб, чтобы заполнить ширину и высоту экрана
+        //     const scale = Math.max(window.innerWidth / frameWidth, window.innerHeight / frameHeight);
+        //     crackedWallContainer.style.transform = `translateX(-50%) scale(${scale})`;
+        // }
+
+        // gsap.to({ currentFrame: 0 }, {
+        //     currentFrame: totalFrames - 1,
+        //     duration: 10,
+        //     ease: 'none',
+        //     roundProps: "currentFrame",
+        //     onUpdate: function () {
+        //         const frameIndex = Math.floor(this.targets()[0].currentFrame);
+        //         if (frameIndex < 0 || frameIndex >= totalFrames) return;
+
+        //         const row = Math.floor(frameIndex / framesPerRow);
+        //         const col = frameIndex % framesPerRow;
+
+        //         const posX = -(col * frameWidth);
+        //         const posY = -(row * frameHeight);
+
+        //         crackedWallContainer.style.backgroundPosition = `${posX}px ${posY}px`;
+        //     },
+        //     scrollTrigger: {
+        //         trigger: '.section--6',
+        //         start: 'top top',
+        //         end: 'bottom bottom',
+        //         scrub: true,
+        //         pin: true,
+        //     }
+        // });
+
+        // window.addEventListener('resize', updateScale);
+        // updateScale();
+
+
+        //
+
+
         const crackedWallContainer = document.querySelector('.crackedwall__overlay');
 
-        const totalFrames = 70; 
-        const framesPerRow = 10; 
+        const totalFrames = 70;
+        const framesPerRow = 10;
         const frameWidth = 1920;
         const frameHeight = 1080;
 
-        // Масштабируем контейнер в зависимости от ширины окна
-        function updateScale() {
-            const scale = window.innerWidth / frameWidth;
-            crackedWallContainer.style.transform = `translateX(-50%) scale(${scale})`;
-        }
+        // function updateScale() {
+        //     // Увеличиваем масштаб, чтобы фон заполнил блок по меньшей стороне
+        //     const scale = Math.min(window.innerWidth / frameWidth, window.innerHeight / frameHeight);
+            
+        //     // Лог для проверки масштабирования
+        //     console.log(`Calculated scale (to fill): ${scale}`);
+            
+        //     // Применяем масштаб, увеличивая контейнер
+        //     crackedWallContainer.style.transform = `translateX(-50%) scale(${scale})`;
+        // }
 
-        // Анимация с GSAP
+        // GSAP анимация для переходов по кадрам
         gsap.to({ currentFrame: 0 }, {
             currentFrame: totalFrames - 1,
             duration: 10,
-            // delay: 6,
             ease: 'none',
             roundProps: "currentFrame",
             onUpdate: function () {
-                const frameIndex = Math.floor(this.targets()[0].currentFrame); 
-
+                const frameIndex = Math.floor(this.targets()[0].currentFrame);
                 if (frameIndex < 0 || frameIndex >= totalFrames) return;
 
-                const row = Math.floor(frameIndex / framesPerRow); 
-                const col = frameIndex % framesPerRow; 
+                const row = Math.floor(frameIndex / framesPerRow);
+                const col = frameIndex % framesPerRow;
 
-                const posX = -(col * frameWidth); 
+                const posX = -(col * frameWidth);
                 const posY = -(row * frameHeight);
 
                 crackedWallContainer.style.backgroundPosition = `${posX}px ${posY}px`;
@@ -295,8 +404,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        window.addEventListener('resize', updateScale);
-        updateScale(); // Первоначальный вызов для установки масштаба
+        // Обновляем масштаб при изменении размера окна и при загрузке страницы
+        // window.addEventListener('resize', updateScale);
+        // window.addEventListener('load', updateScale);
+        // updateScale();
+
+
+
+
 
     };
 

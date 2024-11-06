@@ -508,7 +508,7 @@ main.-js-visible{
 
 .section--6 {
     width: 100%;
-    height: 130vh;
+    height: 150vh;
     overflow: hidden;
     background: #252423;
 }
@@ -599,6 +599,22 @@ main.-js-visible{
     z-index: 1;
     transform: translateX(-50%) scale(1); 
 }
+
+/* .crackedwall__overlay {
+    width: 1920px;
+    height: 1080px;
+    
+    background-image: url('../assets/sprite-sheet/sprite_sheet.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 19200px 7560px;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+} */
 
 
 .crackedwall__result{
