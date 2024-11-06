@@ -705,6 +705,14 @@ main.-js-visible{
 }
 
 @media(max-width: 1024px) {
+    .video{
+        display: none;
+    }
+
+    main{
+        display: block;
+    }
+
     .hero__title{
         font-size: 80px;
         margin-bottom: 5px;
