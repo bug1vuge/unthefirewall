@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 y: '-10vh'
             }, 
             {
-                y: '-80vh',       
+                y: '-60vh',       
                 duration: 4,
                 ease: "power4.out",
                 scrollTrigger: {
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
             {
                 opacity: 1,
                 duration: 0.8,  
-                delay: 15,   
+                delay: 30,
                 scrollTrigger: {
                     trigger: '.crackedwall',
                     start: "center center",
@@ -372,5 +372,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     heroVideoModule();
     showNextScreen();
+
+
+    window.addEventListener('load', function() {
+        window.scrollBy(0, 1);
+    });
 
 });
