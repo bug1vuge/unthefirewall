@@ -601,10 +601,10 @@ main.-js-visible{
 }
 
 .crackedwall__content{
-    display: none;
     max-width: 760px;
 
     position: absolute;
+    z-index: 120;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -620,28 +620,42 @@ main.-js-visible{
     color: #FFFBE9;
     text-transform: uppercase;
     text-align: center;
+
+    margin-bottom: 30px;
 } 
 
 .crackedwall__socials{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
     align-items: center;
-    grid-gap: 10px;
+    justify-content: center;
+    gap: 20px;
 }
 
 .crackedwall__social{
     display: flex;
     align-items: center;
     justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    border: 1px solid #FFFBE9;
+    transition: transform .4s ease;
+}
+
+.crackedwall__social:hover{
+    transform: scale(1.1);
+    transition: transform .4s ease;
 }
 
 .crackedwall__social svg{
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
 }
 
 .crackedwall__social svg path{
-    fill: #000;
+    fill: #FFFBE9;
 }
 /*  */
 
@@ -688,10 +702,13 @@ main.-js-visible{
     .headlines__block--3{
         right: 15%;
     }
-
-    .crackedwall__result{
-        font-size: 80px;
+    
+    .crackedwall__content{
         max-width: 600px;
+    }
+
+    .crackedwall__content-title{
+        font-size: 80px;
     }
 }
 
@@ -779,12 +796,13 @@ main.-js-visible{
         top: 62%;
     }
 
-    .crackedwall__result{
-        font-size: 60px;
+    .crackedwall__content{
         max-width: 390px;
     }
 
-    
+    .crackedwall__content-title{
+        font-size: 60px;
+    }
 }
 
 @media(max-width: 768px) {

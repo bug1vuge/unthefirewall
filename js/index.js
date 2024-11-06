@@ -5,6 +5,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const heroUpperTitle = document.querySelector('.hero__title-upper');
         const heroLowerTitle = document.querySelector('.hero__title-lower');
 
+        const crackedWallContainer = document.querySelector('.crackedwall__overlay');
+
+        const totalFrames = 70; 
+        const framesPerRow = 10; 
+        const frameWidth = 1920;
+        const frameHeight = 1080;
+
         const heroUpperTitleHeight = heroUpperTitle.offsetHeight;
         const heroLowerTitleHeight = heroLowerTitle.offsetHeight;
 
@@ -198,17 +205,23 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         );
 
-        const crackedWallContainer = document.querySelector('.crackedwall__overlay');
-
-        const totalFrames = 70; 
-        const framesPerRow = 10; 
-        const frameWidth = 1920;
-        const frameHeight = 1080;
-
-        function updateScale() {
-            const scale = window.innerWidth / frameWidth;
-            crackedWallContainer.style.transform = `translateX(-50%) scale(${scale})`;
-        };
+        gsap.fromTo('.crackedwall__content',
+            { 
+                opacity: 0,
+            }, 
+            {
+                opacity: 1,
+                duration: 0.8,  
+                delay: 15,   
+                scrollTrigger: {
+                    trigger: '.crackedwall',
+                    start: "center center",
+                    // end: 'center center',
+                    toggleActions: "play none none reverse",
+                    scrub: true
+                }
+            }
+        );
 
         gsap.to({ currentFrame: 0 }, {
             currentFrame: totalFrames - 1,
