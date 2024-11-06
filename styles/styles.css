@@ -261,8 +261,25 @@ main.-js-visible{
     pointer-events: none;
 }
 
+.hero__video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
-.hero__slide-button{
+.hero__video-player{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+.slide-button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -277,9 +294,9 @@ main.-js-visible{
     width: 64px;
     height: 64px;
 
-    position: absolute;
-    z-index: 20;
-    bottom: 10%;
+    position: fixed;
+    z-index: 111;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%) !important;
     pointer-events: all;
@@ -288,7 +305,7 @@ main.-js-visible{
     transform: scale(1.8);
 }
 
-.hero__slide-button svg circle {
+.slide-button svg circle {
     stroke-dasharray: 150 50; 
     stroke-dashoffset: 0; 
     animation: rotateCircle 2s linear infinite; 
@@ -318,7 +335,7 @@ main.-js-visible{
     }
 }
 
-.hero__slide-button svg stop {
+.slide-button svg stop {
     animation: colorShift 4s linear infinite;
 }
 
@@ -478,11 +495,12 @@ main.-js-visible{
 }
 
 .section--1{
-    z-index: 101;
+    /* z-index: 101; */
+    background: #1a1a1a;
 }
 
 .section--2{
-    z-index: 100;
+    /* z-index: 100; */
 }
 
 .section--1,

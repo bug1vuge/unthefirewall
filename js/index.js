@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             duration: 2
         });
 
-        gsap.to('.hero__slide-button', {
+        gsap.to('.slide-button', {
             duration: 1.2,
             delay: 1.5,
             opacity: 1,
@@ -385,7 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const showNextScreen = () => {
 
-        const slideButton = document.querySelector('.hero__slide-button');
+        const slideButton = document.querySelector('.slide-button');
         let scrollToValue = window.innerHeight;
 
         const slideButtonEvent = () => {
