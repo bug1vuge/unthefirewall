@@ -109,8 +109,8 @@ button{
 /* main styles */
 main{
     display: none;
-    background: #252423;
     position: relative;
+    background: #252423;
 }
 
 main.-js-visible{
@@ -168,6 +168,7 @@ main.-js-visible{
     z-index: 10;
 
     pointer-events: none;
+    object-fit: cover;
 }
 
 .video__play{
@@ -278,10 +279,10 @@ main.-js-visible{
 
     position: absolute;
     z-index: 20;
-    pointer-events: all;
-    bottom: 30px;
+    bottom: 10%;
     left: 50%;
     transform: translateX(-50%) !important;
+    pointer-events: all;
 
     opacity: 0;
     transform: scale(1.8);
@@ -464,8 +465,6 @@ main.-js-visible{
     text-transform: uppercase;
 }
 
-
-
 .section{
     display: flex;
     align-items: center;
@@ -475,11 +474,15 @@ main.-js-visible{
     height: 110vh;
 
     position: relative;
-    z-index: 2;
+    z-index: 102;
 }
 
 .section--1{
-    z-index: 2;
+    z-index: 101;
+}
+
+.section--2{
+    z-index: 100;
 }
 
 .section--1,
@@ -674,6 +677,11 @@ main.-js-visible{
     .headlines__block--3{
         right: 15%;
     }
+
+    .crackedwall__result{
+        font-size: 80px;
+        max-width: 600px;
+    }
 }
 
 @media(max-width: 1200px) {
@@ -758,6 +766,11 @@ main.-js-visible{
     .headlines__block--6{
         right: 10%;
         top: 62%;
+    }
+
+    .crackedwall__result{
+        font-size: 60px;
+        max-width: 390px;
     }
 }
 
