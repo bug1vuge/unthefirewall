@@ -216,7 +216,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrollTrigger: {
                     trigger: '.crackedwall',
                     start: "center center",
-                    // end: 'center center',
                     toggleActions: "play none none reverse",
                     scrub: true
                 }
