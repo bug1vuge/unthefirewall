@@ -54,6 +54,21 @@ document.addEventListener('DOMContentLoaded', () => {
             scale: 1
         });
 
+        gsap.fromTo('.slide-button', 
+            {
+                opacity: 1,
+            }, 
+            {
+                opacity: 0,
+                scrollTrigger: {
+                    trigger: ".divider",
+                    end: "bottom bottom",
+                    toggleActions: "play reverse play reverse",
+                    scrub: true
+                },
+            }
+        );
+
         gsap.to(heroUpperTitle, {
             height: heroUpperTitleHeight, 
             duration: 0.6,
@@ -386,6 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const showNextScreen = () => {
 
         const slideButton = document.querySelector('.slide-button');
+
         let scrollToValue = window.innerHeight;
 
         const slideButtonEvent = () => {
@@ -400,7 +416,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     
         slideButton.addEventListener('click', slideButtonEvent);
-    
+
     };
     
     heroVideoModule();
