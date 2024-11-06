@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         });
 
-        gsap.utils.toArray(".section__title").forEach((title, index) => {
+        gsap.utils.toArray(".section__title--anim").forEach((title, index) => {
 
             const lines = title.querySelectorAll("div");
         
