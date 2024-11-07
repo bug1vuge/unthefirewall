@@ -1,5 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const checkCurrentDevice = () => {
+
+        const video = document.querySelector('.foreground');
+
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        isSafari || isIOS ? video.classList.add('-js-hidden') : video.classList.remove('-js-hidden');
+
+    };
+
+    const showNextScreen = () => {
+
+        const slideButton = document.querySelector('.slide-button');
+
+        let scrollToValue = window.innerHeight;
+
+        const slideButtonEvent = () => {
+
+            window.scrollTo({
+                top: scrollToValue,
+                behavior: 'smooth'
+            });
+
+            scrollToValue += window.innerHeight;
+
+        };
+    
+        slideButton.addEventListener('click', slideButtonEvent);
+
+    };
+
+
     const contentAnimationModule = () => {
 
         const heroUpperTitle = document.querySelector('.hero__title-upper');
@@ -350,28 +383,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('mousemove', rotatingPlayButton);
     };
     
-    const showNextScreen = () => {
-
-        const slideButton = document.querySelector('.slide-button');
-
-        let scrollToValue = window.innerHeight;
-
-        const slideButtonEvent = () => {
-
-            window.scrollTo({
-                top: scrollToValue,
-                behavior: 'smooth'
-            });
-
-            scrollToValue += window.innerHeight;
-
-        };
     
-        slideButton.addEventListener('click', slideButtonEvent);
-
-    };
-    
-    heroVideoModule();
+    checkCurrentDevice();
     showNextScreen();
+    heroVideoModule();
 
 });
