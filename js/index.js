@@ -172,10 +172,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     y: '-10vh',       
                     delay: 1,
                     duration: 2,
-                    ease: "power4.out",
+                    ease: "power4.inOut",
                     scrollTrigger: {
-                        trigger: title,
-                        start: "top 80%",
+                        trigger: '.section',
+                        start: "top top",
                         scrub: true
                     }
                 }
@@ -256,8 +256,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         gsap.to({ currentFrame: 0 }, {
             currentFrame: totalFrames - 1,
-            duration: 10,
-            ease: 'none',
+            duration: 60,
+            ease: 'power1.inOut',
             roundProps: "currentFrame",
             onUpdate: function () {
                 const frameIndex = Math.floor(this.targets()[0].currentFrame) + indexMinValue;
@@ -270,6 +270,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 end: 'bottom bottom',
                 scrub: true,
                 pin: true,
+                snap: {
+                    snapTo: "labels", 
+                    duration: {min: 0.2, max: 0.6}, 
+                    ease: "power1.inOut"
+                }
             }
         });
 
