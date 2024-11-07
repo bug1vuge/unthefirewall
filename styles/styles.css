@@ -131,10 +131,10 @@ main.-js-visible{
     height: 100vh;
 
     pointer-events: none;
-} */
+}
 
 .foreground__player{
-    /* position: absolute;
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
@@ -142,20 +142,31 @@ main.-js-visible{
 
     width: 100%;
     height: 100%;
-    object-fit: cover; */
+    object-fit: cover;
 
-    /* z-index: -1; */
+    z-index: -1;
     pointer-events: none;
+} */
 
+/* .foreground {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+} */
+
+.foreground__player {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
-    z-index: -1;
-
     object-fit: cover;
+    z-index: 11; /* Ставим z-index выше, чтобы видео оставалось видимым */
+    pointer-events: none; /* Отключает взаимодействие с видео, чтобы оно не блокировало клики */
 }
+
+
 
 .video{
     width: 100%;
