@@ -38,12 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const heroUpperTitle = document.querySelector('.hero__title-upper');
         const heroLowerTitle = document.querySelector('.hero__title-lower');
 
-        const crackedWallContainer = document.querySelector('.crackedwall__overlay');
+        const svgUse = document.querySelector('.crackedwall__overlay svg use');
 
         const totalFrames = 70; 
-        const framesPerRow = 10; 
-        const frameWidth = 1920;
-        const frameHeight = 1080;
+        const indexMinValue = 14;
 
         const heroUpperTitleHeight = heroUpperTitle.offsetHeight;
         const heroLowerTitleHeight = heroLowerTitle.offsetHeight;
@@ -262,17 +260,9 @@ document.addEventListener('DOMContentLoaded', () => {
             ease: 'none',
             roundProps: "currentFrame",
             onUpdate: function () {
-                const frameIndex = Math.floor(this.targets()[0].currentFrame); 
-
-                if (frameIndex < 0 || frameIndex >= totalFrames) return;
-
-                const row = Math.floor(frameIndex / framesPerRow); 
-                const col = frameIndex % framesPerRow; 
-
-                const posX = -(col * frameWidth); 
-                const posY = -(row * frameHeight);
-
-                crackedWallContainer.style.backgroundPosition = `${posX}px ${posY}px`;
+                const frameIndex = Math.floor(this.targets()[0].currentFrame) + indexMinValue;
+                const formattedFrameIndex = String(frameIndex).padStart(5, '0'); 
+                svgUse.setAttribute('xlink:href', `/assets/sprite-sheet/sprite.svg#Crack_alpha_${formattedFrameIndex}`);
             },
             scrollTrigger: {
                 trigger: '.section--6',
