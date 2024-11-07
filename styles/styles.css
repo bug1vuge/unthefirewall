@@ -890,6 +890,10 @@ main.-js-visible{
     .crackedwall__overlay{
         transform: translateX(-50%) scale(1.1); 
     }
+
+    .crackedwall__content-title{
+        font-size: 48px;
+    }
     
 }
 
