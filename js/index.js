@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 
             {
                 opacity: 0,
+                delay: 0,
                 scrollTrigger: {
                     trigger: ".divider",
                     end: "bottom bottom",
@@ -372,10 +373,5 @@ document.addEventListener('DOMContentLoaded', () => {
     
     heroVideoModule();
     showNextScreen();
-
-
-    window.addEventListener('load', function() {
-        window.scrollBy(0, 1);
-    });
 
 });
