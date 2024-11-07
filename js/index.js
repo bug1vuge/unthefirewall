@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
             onUpdate: function () {
                 const frameIndex = Math.floor(this.targets()[0].currentFrame) + indexMinValue;
                 const formattedFrameIndex = String(frameIndex).padStart(5, '0'); 
-                svgUse.setAttribute('xlink:href', `/assets/sprite-sheet/sprite.svg#Crack_alpha_${formattedFrameIndex}`);
+                svgUse.setAttribute('xlink:href', `./assets/sprite-sheet/sprite.svg#Crack_alpha_${formattedFrameIndex}`);
             },
             scrollTrigger: {
                 trigger: '.section--6',
