@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     };
 
-
     const contentAnimationModule = () => {
 
         const heroUpperTitle = document.querySelector('.hero__title-upper');
@@ -287,9 +286,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const postVideoContent = document.getElementById('main');
         const skipVideoButton = document.getElementById('skip-button');
         const videoWrapper = document.getElementById('video-wrapper');
-
+        let isVideoEndingHandled = false;
+    
         const initAnimation = () => {
-
             gsap.to('.video__player', {
                 duration: 0.6,
                 delay: 0.6,
@@ -302,7 +301,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 duration: 1, 
                 ease: 'power2.out' 
             });
-
         };
     
         const rotatingPlayButton = (event) => {
@@ -311,9 +309,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
             const movingBlockWidth = movingBlock.offsetWidth / 2;
             const movingBlockHeight = movingBlock.offsetHeight / 2;
-            
+    
             movingBlock.style.transform = `translate(${mouseX - movingBlockWidth}px, ${mouseY - movingBlockHeight}px)`;
-            
+    
             const movingRect = movingBlock.getBoundingClientRect();
             const targetRect = skipVideoButton.getBoundingClientRect();
     
@@ -350,33 +348,38 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     
         const videoTimeUpdateEvent = () => {
+            if (!isVideoEndingHandled && video.duration - video.currentTime <= 3) {
+                isVideoEndingHandled = true;
+                handleVideoEnding();
+            }
             requestAnimationFrame(updateVideoProgress);
         };
     
-        const videoEndedEvent = (e) => {
-            e.preventDefault();
-            e.stopPropagation();
+        const handleVideoEnding = () => {
+            videoWrapper.style.visibility = 'hidden';
+            videoWrapper.style.position = 'absolute';
+            movingBlock.style.visibility = 'hidden';
     
-            progressBar.style.width = '0%';
-            video.pause();
-            videoWrapper.style.display = 'none';
             postVideoContent.classList.add('-js-visible');
-    
-            document.removeEventListener('mousemove', rotatingPlayButton);
-    
             contentAnimationModule();
+    
+            setTimeout(() => {
+                video.pause();
+            }, 1500);
         };
-
+    
         initAnimation();
-
+    
         window.innerWidth <= 1024 ? contentAnimationModule() : '';
     
-        skipVideoButton ? skipVideoButton.addEventListener('click', videoEndedEvent) : '';
+        skipVideoButton ? skipVideoButton.addEventListener('click', handleVideoEnding) : '';
         movingBlock ? movingBlock.addEventListener('click', movingBlockClickEvent) : '';
         video ? video.addEventListener('timeupdate', videoTimeUpdateEvent) : '';
-        video ? video.addEventListener('ended', videoEndedEvent) : '';
         document.addEventListener('mousemove', rotatingPlayButton);
     };
+    
+
+    
     
     
     checkCurrentDevice();

@@ -329,7 +329,7 @@ main.-js-visible{
     position: relative;
     z-index: 11;
 
-    max-width: 770px;
+    max-width: 918px;
     width: 100%;
 }
 
@@ -351,11 +351,8 @@ main.-js-visible{
     overflow: hidden;
 }
 
-.hero__title-upper span,
-.hero__title-lower span{
-    display: inline-block;
-    opacity: 1;
-    transition: opacity 0.3s ease;
+.hero__title span{
+    color: #913030;
 }
 
 .hero__title-lower{
@@ -693,12 +690,12 @@ main.-js-visible{
 
 @media(max-width: 1440px) {
     .hero__title{
-        font-size: 100px;
-        line-height: 1;
+        font-size: 80px;
+        line-height: 90%;
     }
 
     .hero__content{
-        max-width: 660px;
+        max-width: 662px;
     }
 
     .headlines__block--2{
@@ -756,12 +753,16 @@ main.-js-visible{
     }
 
     .hero__title{
-        font-size: 80px;
-        margin-bottom: 5px;
+        font-size: 60px;
+        line-height: 0.95;
+    }
+
+    .hero__title-lower{
+        margin-left: 130px;
     }
 
     .hero__content{
-        max-width: 560px;
+        max-width: 515px;
     }
 
     .video__play{
@@ -813,11 +814,15 @@ main.-js-visible{
 
 @media(max-width: 769px) {
     .hero__title{
-        font-size: 60px;
+        font-size: 50px;
+    }
+
+    .hero__title-lower{
+        margin-left: 100px;
     }
 
     .hero__content{
-        max-width: 460px;
+        max-width: 420px;
     }
 
     .headline__title{
@@ -878,14 +883,6 @@ main.-js-visible{
         font-size: 14px;
     }
 
-    .hero__title{
-        font-size: 46px;
-    }
-
-    .hero__content{
-        max-width: 385px;
-    }
-
     .section h2 br{
         display: none;
     }
@@ -901,17 +898,18 @@ main.-js-visible{
         font-size: 40px;
     }
 
+    .hero__title-lower{
+        margin-left: 60px;
+    }
+
     .hero__content{
-        max-width: 285px;
+        max-width: 316px;
     }
 
     .hero__subtitle{
         font-size: 12px;
     }
 
-    .hero__title-lower{
-        margin-left: 80px;
-    }
 
     .headline__title{
         font-size: 14px;
