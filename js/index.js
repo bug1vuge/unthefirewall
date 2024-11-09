@@ -365,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
             setTimeout(() => {
                 video.pause();
-            }, 1500);
+            }, 2500);
         };
     
         initAnimation();
