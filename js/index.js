@@ -279,6 +279,213 @@ document.addEventListener('DOMContentLoaded', () => {
 
     };
 
+    // const heroVideoModule = () => {
+    //     const movingBlock = document.getElementById('video-play');
+    //     const video = document.getElementById('player');
+    //     const progressBar = document.getElementById('progress-bar');
+    //     const postVideoContent = document.getElementById('main');
+    //     const skipVideoButton = document.getElementById('skip-button');
+    //     const videoWrapper = document.getElementById('video-wrapper');
+    //     let isVideoEndingHandled = false;
+    
+    //     const initAnimation = () => {
+    //         gsap.to('.video__player', {
+    //             duration: 0.6,
+    //             delay: 0.6,
+    //             opacity: 1 
+    //         });
+    
+    //         gsap.to('.video__skip', {
+    //             bottom: '40px',
+    //             delay: 1,
+    //             duration: 1, 
+    //             ease: 'power2.out' 
+    //         });
+    //     };
+    
+    //     const rotatingPlayButton = (event) => {
+    //         const mouseX = event.clientX;
+    //         const mouseY = event.clientY;
+    
+    //         const movingBlockWidth = movingBlock.offsetWidth / 2;
+    //         const movingBlockHeight = movingBlock.offsetHeight / 2;
+    
+    //         movingBlock.style.transform = `translate(${mouseX - movingBlockWidth}px, ${mouseY - movingBlockHeight}px)`;
+    
+    //         const movingRect = movingBlock.getBoundingClientRect();
+    //         const targetRect = skipVideoButton.getBoundingClientRect();
+    
+    //         const isIntersecting = !(
+    //             movingRect.right < targetRect.left ||
+    //             movingRect.left > targetRect.right ||
+    //             movingRect.bottom < targetRect.top ||
+    //             movingRect.top > targetRect.bottom
+    //         );
+    
+    //         if (video.paused) {
+    //             movingBlock.style.opacity = isIntersecting ? '0' : '1';
+    //             if (!isIntersecting) {
+    //                 movingBlock.classList.remove('-js-hidden');
+    //             }
+    //         } else {
+    //             hideMovingBlock();
+    //         }
+    //     };
+    
+    //     const hideMovingBlock = () => {
+    //         movingBlock.style.opacity = '0';
+    //         movingBlock.classList.add('-js-hidden');
+    //     };
+    
+    //     const movingBlockClickEvent = () => {
+    //         video.play();
+    //         hideMovingBlock();
+    //     };
+    
+    //     const updateVideoProgress = () => {
+    //         const progress = (video.currentTime / video.duration) * 100;
+    //         progressBar.style.width = `${progress}%`;
+    //     };
+    
+    //     const videoTimeUpdateEvent = () => {
+    //         if (!isVideoEndingHandled && video.duration - video.currentTime <= 3) {
+    //             isVideoEndingHandled = true;
+    //             handleVideoEnding();
+    //         }
+    //         requestAnimationFrame(updateVideoProgress);
+    //     };
+    
+    //     const handleVideoEnding = () => {
+    //         videoWrapper.style.visibility = 'hidden';
+    //         videoWrapper.style.position = 'absolute';
+    //         movingBlock.style.visibility = 'hidden';
+    
+    //         postVideoContent.classList.add('-js-visible');
+    //         contentAnimationModule();
+    
+    //         setTimeout(() => {
+    //             video.pause();
+    //         }, 2500);
+    //     };
+    
+    //     initAnimation();
+    
+    //     window.innerWidth <= 1024 ? contentAnimationModule() : '';
+    
+    //     skipVideoButton ? skipVideoButton.addEventListener('click', handleVideoEnding) : '';
+    //     movingBlock ? movingBlock.addEventListener('click', movingBlockClickEvent) : '';
+    //     video ? video.addEventListener('timeupdate', videoTimeUpdateEvent) : '';
+    //     document.addEventListener('mousemove', rotatingPlayButton);
+    // };
+    
+    // const heroVideoModule = () => {
+    //     const movingBlock = document.getElementById('video-play');
+    //     const video = document.getElementById('player');
+    //     const progressBar = document.getElementById('progress-bar');
+    //     const postVideoContent = document.getElementById('main');
+    //     const skipVideoButton = document.getElementById('skip-button');
+    //     const videoWrapper = document.getElementById('video-wrapper');
+    //     let isContentVisible = false;
+    
+    //     const initAnimation = () => {
+    //         gsap.to('.video__player', {
+    //             duration: 0.6,
+    //             delay: 0.6,
+    //             opacity: 1 
+    //         });
+    
+    //         gsap.to('.video__skip', {
+    //             bottom: '40px',
+    //             delay: 1,
+    //             duration: 1, 
+    //             ease: 'power2.out' 
+    //         });
+    //     };
+    
+    //     const rotatingPlayButton = (event) => {
+    //         const mouseX = event.clientX;
+    //         const mouseY = event.clientY;
+    
+    //         const movingBlockWidth = movingBlock.offsetWidth / 2;
+    //         const movingBlockHeight = movingBlock.offsetHeight / 2;
+    
+    //         movingBlock.style.transform = `translate(${mouseX - movingBlockWidth}px, ${mouseY - movingBlockHeight}px)`;
+    
+    //         const movingRect = movingBlock.getBoundingClientRect();
+    //         const targetRect = skipVideoButton.getBoundingClientRect();
+    
+    //         const isIntersecting = !(
+    //             movingRect.right < targetRect.left ||
+    //             movingRect.left > targetRect.right ||
+    //             movingRect.bottom < targetRect.top ||
+    //             movingRect.top > targetRect.bottom
+    //         );
+    
+    //         if (video.paused) {
+    //             movingBlock.style.opacity = isIntersecting ? '0' : '1';
+    //             if (!isIntersecting) {
+    //                 movingBlock.classList.remove('-js-hidden');
+    //             }
+    //         } else {
+    //             hideMovingBlock();
+    //         }
+    //     };
+    
+    //     const hideMovingBlock = () => {
+    //         movingBlock.style.opacity = '0';
+    //         movingBlock.classList.add('-js-hidden');
+    //     };
+    
+    //     const movingBlockClickEvent = () => {
+    //         video.play();
+    //         hideMovingBlock();
+    //     };
+    
+    //     const updateVideoProgress = () => {
+    //         const progress = (video.currentTime / video.duration) * 100;
+    //         progressBar.style.width = `${progress}%`;
+    //     };
+    
+    //     const videoTimeUpdateEvent = () => {
+    //         if (!isContentVisible && video.currentTime >= 60) {
+    //             isContentVisible = true;
+    //             showContentAndContinueVideo();
+    //         }
+    //         requestAnimationFrame(updateVideoProgress);
+    //     };
+    
+    //     const showContentAndContinueVideo = () => {
+    //         videoWrapper.style.display = 'none'; // Полностью скрываем видео
+    //         postVideoContent.classList.add('-js-visible'); // Показываем основной контент
+    //         contentAnimationModule(); // Запускаем анимацию контента
+    
+    //         setTimeout(() => {
+    //             video.pause(); // Останавливаем видео через 5 секунд
+    //         }, 5000);
+    //     };
+    
+    //     const handleVideoEnding = () => {
+    //         videoWrapper.style.display = 'none'; // Скрываем видео сразу
+    //         movingBlock.style.visibility = 'hidden';
+    
+    //         postVideoContent.classList.add('-js-visible');
+    //         contentAnimationModule();
+    
+    //         setTimeout(() => {
+    //             video.pause();
+    //         }, 2500);
+    //     };
+    
+    //     initAnimation();
+    
+    //     window.innerWidth <= 1024 ? contentAnimationModule() : '';
+    
+    //     skipVideoButton ? skipVideoButton.addEventListener('click', handleVideoEnding) : '';
+    //     movingBlock ? movingBlock.addEventListener('click', movingBlockClickEvent) : '';
+    //     video ? video.addEventListener('timeupdate', videoTimeUpdateEvent) : '';
+    //     document.addEventListener('mousemove', rotatingPlayButton);
+    // };
+    
     const heroVideoModule = () => {
         const movingBlock = document.getElementById('video-play');
         const video = document.getElementById('player');
@@ -286,7 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const postVideoContent = document.getElementById('main');
         const skipVideoButton = document.getElementById('skip-button');
         const videoWrapper = document.getElementById('video-wrapper');
-        let isVideoEndingHandled = false;
+        let isContentVisible = false;
     
         const initAnimation = () => {
             gsap.to('.video__player', {
@@ -348,24 +555,34 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     
         const videoTimeUpdateEvent = () => {
-            if (!isVideoEndingHandled && video.duration - video.currentTime <= 3) {
-                isVideoEndingHandled = true;
-                handleVideoEnding();
+            if (!isContentVisible && video.currentTime >= 60) {
+                isContentVisible = true;
+                showContentAndContinueVideo();
             }
             requestAnimationFrame(updateVideoProgress);
         };
     
+        const showContentAndContinueVideo = () => {
+            videoWrapper.style.display = 'none'; // Полностью скрываем видео
+            postVideoContent.classList.add('-js-visible'); // Показываем основной контент
+            contentAnimationModule(); // Запускаем анимацию контента
+    
+            setTimeout(() => {
+                video.pause(); // Останавливаем видео через 5 секунд
+            }, 5000);
+        };
+    
         const handleVideoEnding = () => {
-            videoWrapper.style.visibility = 'hidden';
-            videoWrapper.style.position = 'absolute';
+            // Проверяем, воспроизводится ли видео
+            if (!video.paused) {
+                video.pause(); // Сразу останавливаем видео, если оно запущено
+            }
+    
+            videoWrapper.style.display = 'none'; // Скрываем видео сразу
             movingBlock.style.visibility = 'hidden';
     
             postVideoContent.classList.add('-js-visible');
             contentAnimationModule();
-    
-            setTimeout(() => {
-                video.pause();
-            }, 2500);
         };
     
         initAnimation();
@@ -379,9 +596,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
 
-    
-    
-    
     checkCurrentDevice();
     showNextScreen();
     heroVideoModule();
